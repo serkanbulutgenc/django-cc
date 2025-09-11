@@ -105,9 +105,7 @@ jobs:
             org.opencontainers.image.description=This is the image description
             org.opencontainers.image.vendor=Sekonet
           tags: |
-            type=schedule
             type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
