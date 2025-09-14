@@ -3,7 +3,13 @@ name = "django-cc"
 version = "0.1.0"
 description = "This is a test poject with Django cookiecutter"
 readme = "README.md"
-dependencies = []
+dependencies = [
+    "django-cors-headers>=4.8.0",
+    "django-mptt>=0.18.0",
+    "django-ninja>=1.4.3",
+    "django-tinymce>=4.1.0",
+    "ninja-schema>=0.14.3",
+]
 
 # ==== pytest ====
 [tool.pytest.ini_options]
@@ -132,12 +138,14 @@ ignore = [
           # of types for comparison.
           # Deactivated because it can make the code slow:
           # https://github.com/astral-sh/ruff/issues/7871
+  "DJ001",
 ]
 # The fixes in extend-unsafe-fixes will require
 # provide the `--unsafe-fixes` flag when fixing.
 extend-unsafe-fixes = [
   "UP038",
 ]
+allowed-confusables = ["ı"]
 
 [tool.ruff.lint.isort]
 force-single-line = true
