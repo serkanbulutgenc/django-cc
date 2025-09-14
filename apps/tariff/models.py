@@ -62,7 +62,7 @@ class Tariff(MPTTModel):
         max_length=12,
         help_text=_("Position Number"),
         blank=True,
-        default="",
+        null=True,
     )
     item_definition = models.CharField(
         _("Definition"),
