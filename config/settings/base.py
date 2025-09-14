@@ -78,11 +78,15 @@ THIRD_PARTY_APPS = [
     "allauth.mfa",
     # "allauth.socialaccount",
     "webpack_loader",
+    "mptt",
+    "corsheaders",
+    "tinymce",
 ]
 
 LOCAL_APPS = [
     "django_cc.users",
     # Your stuff: custom apps go here
+    "apps.tariff.apps.TariffConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -133,6 +137,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -292,3 +297,23 @@ WEBPACK_LOADER = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+# TinyMCE Settings
+TINYMCE_DEFAULT_CONFIG = {
+    "height": "320px",
+    "width": "600px",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+    "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
+    "a11ycheck ltr rtl | showcomments addcomment code",
+    "custom_undo_redo_levels": 5,
+    # "language": "es_ES",  # To force a specific language instead of the Django current language.
+}
+
+
+CORS_ALLOW_ALL_ORIGINS = True
