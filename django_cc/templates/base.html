@@ -36,7 +36,7 @@
     {% block body %}
       <div class="mb-1">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
-          <div class="container-fluid">
+          <div class="container">
             <button class="navbar-toggler navbar-toggler-right"
                     type="button"
                     data-bs-toggle="collapse"
@@ -51,9 +51,6 @@
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
                 {% if request.user.is_authenticated %}
                   <li class="nav-item">
@@ -95,7 +92,7 @@
         {% endif %}
         {% block main %}
           {% block content %}
-            <p>Use this document as a way to quick start any new project.</p>
+            <p class="py-3">Wellcome to the tariff app.</p>
           {% endblock content %}
         {% endblock main %}
       </div>
