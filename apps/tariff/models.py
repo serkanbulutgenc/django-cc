@@ -67,7 +67,7 @@ class Tariff(MPTTModel):
     item_definition = models.CharField(
         _("Definition"),
         help_text=_("Item Definition"),
-        max_length=500,
+        max_length=1500,
     )
 
     item_type = models.GeneratedField(
